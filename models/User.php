@@ -44,7 +44,7 @@ class User extends ActiveRecord implements IdentityInterface {
             ['email', 'email'],
             ['email', 'unique', 'message' => Yii::t('app', 'This email address has already been taken.')],
 
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
+            ['status', 'default', 'value' => self::STATUS_DELETED],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
     }
@@ -60,7 +60,7 @@ class User extends ActiveRecord implements IdentityInterface {
      * @inheritdoc
      */
     public static function findIdentityByAccessToken($token, $type = null) {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        throw new NotSupportedException(Yii::t('app', '"findIdentityByAccessToken" is not implemented.'));
     }
 
     /**

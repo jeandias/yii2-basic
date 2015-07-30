@@ -53,6 +53,8 @@ $config = [
         ],
     ],
     'params' => $params,
+    'language' => 'pt-BR',
+    'timeZone' => 'America/Sao_Paulo',
 ];
 
 if (YII_ENV_DEV) {
