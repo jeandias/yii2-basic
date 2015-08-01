@@ -51,6 +51,22 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+    ],
+    'modules' => [
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+        ],
+    ],
+    'as access' => [
+    	'class' => 'mdm\admin\components\AccessControl',
+    	'allowActions' => [
+    		'site/login',
+            'site/signup',
+            'site/request-password-reset',
+    	],
     ],
     'params' => $params,
     'language' => 'pt-BR',
